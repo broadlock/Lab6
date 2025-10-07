@@ -5,3 +5,75 @@
 
 ### *Алгорим и блок-схема*
 
+1. **Начало**
+2. Ввод данных:
+- `Число N`
+3. Проверка корректности данных:
+- `Если N ≤ 0 или N ≥ 1000 → переход к шагу 8`
+4. Вычисление последней цифры:
+  
+5. Определение 1 цифры:
+   
+6. Вывод результатов:
+7. Завершение программы
+8. Вывод ошибки
+9. **Конец**
+
+### *Блок-схема*
+
+<img width="465" height="1019" alt="Lab6 1 drawio" src="https://github.com/user-attachments/assets/171d3330-36f4-4d61-bab3-d45a6fede309" />
+
+# 2. Реализация программы
+```
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main() {
+    int N;
+
+    printf("Введите натуральное число N (N < 1000): ");
+    scanf("%d", &N);
+
+    // Проверка корректности ввода
+    if (N <= 0 || N >= 1000) {
+        printf("Ошибка: число должно быть натуральным и меньше 1000\n");
+        return 1;
+    }
+
+    int last_digit = N % 10;  // Последняя цифра
+
+    // Находим первую цифру с помощью if/else
+    int first_digit;
+    if (N < 10) {
+        // Однозначное число
+        first_digit = N;
+    }
+    else if (N < 100) {
+        // Двузначное число
+        first_digit = N / 10;
+    }
+    else {
+        // Трехзначное число
+        first_digit = N / 100;
+    }
+
+    // Контрольные примеры:
+    // 1. N = 123: первая цифра = 1, последняя цифра = 3
+    // 2. N = 7: первая цифра = 7, последняя цифра = 7
+    // 3. N = 456: первая цифра = 4, последняя цифра = 6
+
+
+    printf("Введенное число: %d\n", N);
+    printf("Первая цифра: %d\n", first_digit);
+    printf("Последняя цифра: %d\n", last_digit);
+
+    return 0;
+}
+```
+# 3. Результат работы программы
+<img width="362" height="106" alt="image" src="https://github.com/user-attachments/assets/0d15d43e-b24d-41ee-badb-a2f34c601812" />
+<img width="355" height="105" alt="image" src="https://github.com/user-attachments/assets/f9d704f8-7c5c-48cf-88c0-092321d00742" />
+<img width="359" height="102" alt="image" src="https://github.com/user-attachments/assets/73f3b2af-d768-4857-8563-96a0426b1c53" />
+
+# 4. Информация о разработчике
+Гаркин Алексей, бИЦ - 251
